@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
@@ -7,6 +7,7 @@ import { getDetails, loggedDetails,api } from '../service/api';
 import { store } from '../App';
 
 const LoginForm=()=> {
+
 const {token,setToken,setProfileName}=useContext(store)
 
   const navigate=useNavigate();
@@ -49,10 +50,12 @@ console.log(er)
     <Form className='form-wrapper'>
       <div className='background-wrapper'>
       <h1 className='title'>Login</h1>
-    <FormGroup floating>
+    <FormGroup   floating>
     
       <Input
+  
         id="exampleEmail"
+        className='input-wrap'
         name="email"
         placeholder="Email"
         type="email"
@@ -67,10 +70,12 @@ console.log(er)
     {' '}
     <FormGroup floating>
       <Input
+  
         id="examplePassword"
         name="password"
         placeholder="Password"
-        type="password"
+        type="password"  
+        className='input-wrap'
         onChange={(e)=>setPassword(e.target.value)}
         value={password}
       />
@@ -80,14 +85,13 @@ console.log(er)
     </FormGroup>
 
     {' '}
-    <Button  color="primary" className='mb-1' onClick={loggeed}>
+    <div className='d-flex gap-3 align-items-center justify-content-center'>
+    <Button  color="primary"  onClick={loggeed}>
       Submit
     </Button>
-    <p>  
-         <Button  className='mt-1' color="success"  onClick={()=>navigate("/register")}>
+    <Button  color="success"  onClick={()=>navigate("/register")}>
 Register Here </Button>
-</p>
- 
+</div>
     </div>
   </Form>
   

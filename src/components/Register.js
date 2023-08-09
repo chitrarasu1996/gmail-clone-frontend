@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {FormGroup,Label,Input,Form,Button} from "reactstrap"
 import { RegisterData } from '../service/api';
 
@@ -68,6 +68,9 @@ navigate("/login")
     <Button  color="primary" onClick={submitted}>
       Submit
     </Button>
+  <Link to={"/login"}><Button  color="primary"  className='ms-2 '>
+      Already have an account 
+    </Button></Link>  
    
     </div>
   </Form>

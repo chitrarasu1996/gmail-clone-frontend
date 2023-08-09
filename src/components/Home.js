@@ -5,6 +5,8 @@ import { useState,useEffect } from 'react';
 import Sidebar from './Sidebar';
 import Maildata from './Maildata';
 import { store } from '../App';
+import {CgProfile} from "react-icons/cg"
+import{AiOutlineSearch} from "react-icons/ai"
  function Home() {
 
   const navigate=useNavigate();
@@ -41,7 +43,7 @@ const loggedOut=async()=>{
     <div className=" ms-1   me-2 ">
   <div  className=" " >
  <span onClick={sendMailto} className='d-flex align-items-center gap-2  ms-2 compose-wrapper'> <img style={{width:"100%",height:"20px"}}  src='https://img.icons8.com/?size=512&id=KahvNOlflKfj&format=png'>
-  </img>Compose </span> 
+  </img >Compose </span> 
   </div >
  
 </div>
@@ -51,36 +53,41 @@ const loggedOut=async()=>{
   <span className='ms-1 gmail-tittle'> Gmail</span>
   
   </a>
+  <div className='header-wrap'>
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav ">
-  <div className='d-flex gap-2'>
+  <div className='header-wrap ms-4'>
+    <div className='form-container-wrap'>
       <form className="form-inline my-2 my-lg-0 d-flex searchwrapper">
        
-      <button className="btn btn-outline-none my-2 my-sm-0" type="submit" ><img  style={{width:"20px",opacity:"0.8"}} src='https://img.icons8.com/?size=512&id=7695&format=png'></img></button>
-      <input className="form-control mr-sm-2  inputwrapper" style={{borderRadius:"20px",background:"#EAF1FB"}} type="search" placeholder="Search mail" aria-label="Search" />
+      <button className="search-button btn 
+      btn-outline-none my-2 my-sm-0 bg-transparent rounded-lg" type="submit" >
+        
+      <AiOutlineSearch size={25}/>
+      </button>
+      <input className="form-control  
+       inputwrapper" type="search" placeholder="Search mail" aria-label="Search" />
     
     </form>
+    </div>
 
-    <div className="dropdown profile-wrapper  ">
-  <button className="btn btn-tranperant  me-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
- {/* <span className='me-1' style={{fontWeight:"200",fontSize:"20px"}} ></span> */}
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="violet" class="bi bi-person-circle" viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-</svg>
+    <div className="dropdown  profile-wrapper">
+  <button className="btn btn-tranperant  bg-transparent me-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+<CgProfile size={20}/>
+
   </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item " style={{fontSize:"15px",fontWeight:"normal"}} href="#">{profileName}</a></li>
+  <ul className="dropdown-menu dropdown-wrapper">
+    <li><a className="dropdown-item" style={{fontSize:"15px",fontWeight:"normal"}} href="#">{profileName}</a></li>
     <li><a className="dropdown-item" href="#" onClick={loggedOut}>signout</a></li>
   
   </ul>
 </div>
 
 </div>
-
-    
+  
     </ul>
   
+  </div>
   </div>
 </nav>
 <div className='row '>

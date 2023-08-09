@@ -3,7 +3,7 @@ import {  } from "../service/api";
 import { getAllMails,deleteMailReq,getContentById } from "../service/api";
 import { useNavigate } from "react-router-dom";
 import { store } from "../App";
-
+import {RiDeleteBin6Line} from "react-icons/ri"
 
 const Maildata=()=>{
 
@@ -44,25 +44,26 @@ const perticularContent=async (id)=>{
 }
     return(
         <div>
-            <div className="mail-tittle mt-2 text-center  mb-2" >
-            All Mails
-            </div>
-        <div >
+    
+        <div className="mt-2">
         {allDataFromMail.length?allDataFromMail.map((mail,i)=>(
-            <div  className="MailData all-mail-wrapper d-flex align-items-center justify-content-between" key={i}>
+            <div  className="MailData" key={i}>
                  
-               <div   className="d-flex "  >
+               <div  className="row all-mail-data"  >
           
-               <p className="hover me-5" onClick={()=>perticularContent(mail._id)}>To:{mail.to}</p>
+               <p className="hover-to col-md-6" onClick={()=>perticularContent(mail._id)}>{mail.to}</p>
 
-                 <p  className="hover" onClick={()=>perticularContent(mail._id)} > <span className='me-1 ms-2 '  >sub:</span>{mail.sub}</p>
-                 </div>
-                 <p onClick={()=>deleteMail(mail._id)} >  <button className="btn btn-danger me-2 mt-1"  >Delete</button>
+                 <p  className="hover-sub col-md-4 " onClick={()=>perticularContent(mail._id)} >{mail.sub.substring(0, 25)}</p>
+                
+                 <p className="col-md-1" onClick={()=>deleteMail(mail._id)} >  <button className="btn btn-danger delete-button rounded " ><RiDeleteBin6Line size={14}/></button>
               </p>
-             
+              </div>
             </div>
         )):<div><h1>empty...</h1></div>}
          </div>
+     
+
+
         </div>
 
     )

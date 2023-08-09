@@ -16,10 +16,6 @@ const Showcontent=()=> {
 
  
 
-// const getData=async(id)=>{
-//  const mailIdData= await getContentById(id)
-
-// }
 
 
   return (
@@ -29,9 +25,9 @@ const Showcontent=()=> {
 {
  
 particularMailContent.length?<div className='particular-content'> 
-    <p  className='mt-2 text-center text-white content-tittle-container'>Content</p>
+    <p  className='mt-2 text-center content-tittle-container text-white'>Content</p>
         <p  className='specific-content' >{particularMailContent}</p>  
-   </div>:<div><h1 className='text-center other-content text-white'>Loading...</h1></div>
+   </div>:<div><h1 className='text-center other-content'>Loading...</h1></div>
 }
          
     </div>

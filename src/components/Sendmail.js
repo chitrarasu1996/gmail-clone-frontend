@@ -30,6 +30,7 @@ return
 }
     return (
         <Form className='sendmail-form'>
+          <div className='send-form'>
   <FormGroup className='form-group'>
     <Label
       for="exampleEmail"
@@ -67,11 +68,13 @@ return
     />
     <div  className='mt-2'>
      <Input
+     
       id="examplePassword"
       name="content"
       placeholder="content"
       type="text"
-      style={{width:"400px",paddingBottom:"300px"}
+      style={{width:"400px",paddingBottom:"300px",outline
+    :"none"}
       }
       onChange={(e)=>setContent(e.target.value)}
   value={content}
@@ -83,6 +86,7 @@ return
   <Button color='success' onClick={mailSend}>
     Send
   </Button>
+  </div>
 </Form>
     )
 }
