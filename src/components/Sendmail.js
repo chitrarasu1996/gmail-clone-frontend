@@ -14,7 +14,7 @@ const navigate=useNavigate();
 
 
     const mailSend=async()=>{
-      console.log(to,subject,content,"from")
+
       if(to.length<2||subject.length<2||content.length<2 ){
 alert("enter valid Details")
 return
