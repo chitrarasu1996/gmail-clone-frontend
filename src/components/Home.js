@@ -16,7 +16,7 @@ import{AiOutlineSearch} from "react-icons/ai"
 
  
 useEffect(() => {
-
+console.log(token)
   if (token==null&&profileName==null) {
     navigate("/login")
     }

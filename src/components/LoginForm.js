@@ -19,11 +19,8 @@ const [password,setPassword]=useState("")
 
 const loggeed=async()=>{
   try{
-
- 
-
 const logged=await loggedDetails(emailDetails,password)
-
+console.log(logged)
 if(logged.data.jwtToken){
  
   await localStorage.setItem("jwtToken",logged.data.jwtToken);
@@ -32,7 +29,6 @@ localStorage.setItem("userEmail",logged.data.userEmail)
   setToken(logged.data.jwtToken)
   setProfileName(logged.data.userEmail)
   navigate("/")
-
 }else{
 
   alert(logged.data.message)
