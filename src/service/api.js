@@ -4,12 +4,12 @@ import axios from 'axios'
 
 export const api=`https://gmail-clone-os5x.onrender.com/`
 
-export const getDetails=async()=>{
 
+export const getDetails=async()=>{
     const data=await axios.get(api)
     return data;
 }
-;
+
 export const RegisterData=async(email,password)=>{
     const registerDetails=await axios.post(api+"email/register",{email,password})
  return(registerDetails.data.message)
@@ -17,7 +17,6 @@ export const RegisterData=async(email,password)=>{
 
 export const loggedDetails=async(email,password)=>{
 const loginData=await axios.post(api+"email/login",{email,password})
-
 return loginData
 };
 
