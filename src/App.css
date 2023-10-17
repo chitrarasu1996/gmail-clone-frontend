@@ -93,16 +93,7 @@ Button:hover{
 
 }
 
-.dropdown-wrapper{
- 
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 50%;
 
-padding-right: 20px !important;
-  overflow-y: hidden;
-  margin-right: 30px !important;
-}
 .dropdown-menu[data-bs-popper]{
   right: 100px !important;
   left: 10px !important;
@@ -136,6 +127,8 @@ height: 100vh;
 /* position: fixed; */
 
 }
+
+
 .form-control:focus {
   box-shadow: none !important;
 
@@ -153,16 +146,18 @@ align-items: center;
   height: 100vh;
   width: 100vw;
 }
-.dropdown-menu {
+.dropdown-menu[data-bs-popper]{
   min-width: 12rem !important;
+ 
 }
-.dropdown-item{
-  width: 100% !important;
-  padding-left: 14px !important;
-}
+
+
 .dropdown-item:hover {
-  width: 100% !important;
-background-color:lightgray !important;
+  padding-right: 20px !important;
+
+  padding-right: 10px !important;
+  background-color: #C2E7FF !important;
+border-radius:  5px !important;
 }
 .new-mesg{
   border-radius: 9px 9px 0 0;

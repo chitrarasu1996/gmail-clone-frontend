@@ -20,7 +20,7 @@ const [password,setPassword]=useState("")
 const loggeed=async()=>{
   try{
 const logged=await loggedDetails(emailDetails,password)
-console.log(logged)
+
 if(logged.data.jwtToken){
  
   await localStorage.setItem("jwtToken",logged.data.jwtToken);

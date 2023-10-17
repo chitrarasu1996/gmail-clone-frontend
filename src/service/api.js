@@ -1,7 +1,6 @@
-import axios, { all } from 'axios'
-import React, { useContext } from 'react'
-import { store } from '../App';
-import Sendmail from '../components/Sendmail';
+import axios from 'axios'
+
+
 
 export const api=`https://gmail-clone-os5x.onrender.com/`
 
@@ -49,7 +48,6 @@ return deletemail
 export const getContentById=async(id)=>{
 
     const emailContent=await axios.get(api+"email/findemail/"+`${id}`)
-
     return emailContent
 
 }
