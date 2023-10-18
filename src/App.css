@@ -23,6 +23,14 @@ overflow-y: auto;
   color: black !important;;
   padding: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+  
+  .media{
+    display: flex !important;
+  justify-content: space-between ;
+  }
+}
 .background-wrapper{
 border:  1px solid #DADCE0 !important;
 background-color:#FDFDFD;

@@ -50,13 +50,15 @@ const perticularContent=async (id)=>{
             <div  className="MailData" key={i}>
                  
                <div  className="row all-mail-data"  >
-          
+<div className="media">
                <p className="hover-to col-md-6" onClick={()=>perticularContent(mail._id)}>{mail.to}</p>
 
                  <p  className="hover-sub col-md-4 " onClick={()=>perticularContent(mail._id)} >{mail.sub.substring(0, 25)}</p>
                 
                  <p className="col-md-1" onClick={()=>deleteMail(mail._id)} >  <button className="btn btn-danger delete-button rounded " ><RiDeleteBin6Line size={14}/></button>
+              
               </p>
+          </div>
               </div>
             </div>
         )):<div><h1>empty...</h1></div>}
