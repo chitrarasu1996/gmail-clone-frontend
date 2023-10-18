@@ -49,8 +49,9 @@ const perticularContent=async (id)=>{
         {allDataFromMail.length?allDataFromMail.map((mail,i)=>(
             <div  className="MailData" key={i}>
                  
-               <div  className="row all-mail-data"  >
+             
 <div className="media">
+<div  className="row all-mail-data"  >
                <p className="hover-to col-md-6" onClick={()=>perticularContent(mail._id)}>{mail.to}</p>
 
                  <p  className="hover-sub col-md-4 " onClick={()=>perticularContent(mail._id)} >{mail.sub.substring(0, 25)}</p>
